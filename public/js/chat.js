@@ -173,7 +173,7 @@ function updatePlayersList(players) {
     players.forEach((player, index) => {
         const div = document.createElement('div');
         div.className = 'player-item';
-        
+        const medal = index === 0 ? '' : index === 1 ? '' : index === 2 ? '' : '•';
         
         div.innerHTML = `
             <span class="player-name">${medal} ${escapeHtml(player.name)}</span>
