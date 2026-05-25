@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> Лабораторная работа №9</h1>
+            <p>WebSocket-чат с использованием Express и Socket.IO</p>
+        </header>
+
+        <main>
+            <section class="welcome">
+                <h2>Добро пожаловать!</h2>
+                <p>Это главная страница проекта лабораторной работы №8/№9.</p>
+                
+                <div class="nav-links">
+                    <a href="/chat" class="btn btn-primary"> Перейти к игре "Угадай число"</a>
+                </div>
+            </section>
+
+            <% if (rooms && rooms.length > 0) { %>
+            <section class="active-rooms">
+                <h3> Активные комнаты:</h3>
+                <ul>
+                    <% rooms.forEach(room => { %>
+                        <li><%= room %></li>
+                    <% }) %>
+                </ul>
+            </section>
+            <% } %>
+
+            <section class="info">
+                <h3>Описание игры:</h3>
+                <ul>
+                    <li>Сервер загадывает случайное число от 1 до N</li>
+                    <li>Игроки по очереди (или одновременно) пытаются угадать число</li>
+                    <li>Сервер подсказывает: "слишком мало" или "слишком много"</li>
+                    <li>Победитель получает очки в зависимости от количества попыток</li>
+                    <li>Можно общаться в чате во время игры</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>Разработано в рамках лабораторной работы №9 | 10 вариант</p>
+        </footer>
+    </div>
+</body>
+</html>

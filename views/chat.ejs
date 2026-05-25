@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="app">
+        <div id="login-screen" class="screen active">
+            <div class="login-box">
+                <h1> Угадай число</h1>
+                <p class="subtitle">Чат-игра с WebSocket</p>
+                
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="player-name">Ваше имя:</label>
+                        <input type="text" id="player-name" placeholder="Введите имя" required maxlength="20">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="room-name">Название комнаты:</label>
+                        <input type="text" id="room-name" placeholder="Например: room1" required maxlength="20">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="max-number">Максимальное число (диапазон 1-N):</label>
+                        <input type="number" id="max-number" value="100" min="10" max="10000" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full"> Войти в игру</button>
+                </form>
+                
+                <a href="/" class="back-link">← На главную</a>
+            </div>
+        </div>
+
+        <div id="game-screen" class="screen">
+            <div class="game-layout">
+
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h3>👥 Игроки</h3>
+                    </div>
+                    <div id="players-list" class="players-list">
+
+                    </div>
+                    
+                    <div class="game-info">
+                        <h4> Информация</h4>
+                        <p>Диапазон: <span id="range-info">1 - 100</span></p>
+                        <p>Статус: <span id="game-status">🟢 Активна</span></p>
+                    </div>
+                    
+                    <div class="rules">
+                        <h4> Правила</h4>
+                        <p>Отправьте число в чат, чтобы попытаться угадать!</p>
+                    </div>
+                </aside>
+
+
+                <main class="chat-area">
+                    <header class="chat-header">
+                        <h2 id="room-title">Комната: -</h2>
+                        <span id="typing-indicator" class="typing-indicator"></span>
+                    </header>
+                    
+                    <div id="messages-container" class="messages-container">
+
+                    </div>
+                    
+                    <div class="input-area">
+                        <input type="text" id="message-input" placeholder="Введите сообщение или число..." maxlength="200" autocomplete="off">
+                        <button id="send-btn" class="btn btn-primary">📨</button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,444 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+header {
+    text-align: center;
+    color: white;
+    padding: 40px 0;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.welcome {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 20px 0;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.welcome h2 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.nav-links {
+    margin: 30px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.info {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.info h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.info ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.info li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.info li::before {
+    content: "✅";
+    position: absolute;
+    left: 0;
+}
+
+.active-rooms {
+    background: white;
+    border-radius: 16px;
+    padding: 20px 30px;
+    margin: 20px 0;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    padding: 30px 0;
+    opacity: 0.8;
+}
+
+
+.screen {
+    display: none;
+    min-height: 100vh;
+}
+
+.screen.active {
+    display: flex;
+}
+
+
+.login-box {
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    margin: auto;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.login-box h1 {
+    color: #667eea;
+    font-size: 2.2em;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+
+.btn-full {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.back-link {
+    display: block;
+    margin-top: 20px;
+    color: #667eea;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+
+.game-layout {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: #f5f5f5;
+}
+
+.sidebar {
+    width: 280px;
+    background: white;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.sidebar-header h3 {
+    font-size: 1.2em;
+}
+
+.players-list {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.player-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 8px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+
+.player-item:hover {
+    background: #e9ecef;
+}
+
+.player-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.player-score {
+    background: #667eea;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+.game-info, .rules {
+    padding: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.game-info h4, .rules h4 {
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.game-info p, .rules p {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+.chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #fafafa;
+}
+
+.chat-header {
+    padding: 20px 25px;
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h2 {
+    color: #333;
+    font-size: 1.3em;
+}
+
+.typing-indicator {
+    color: #888;
+    font-size: 0.9em;
+    font-style: italic;
+    min-height: 20px;
+}
+
+.messages-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.message {
+    max-width: 75%;
+    padding: 12px 16px;
+    border-radius: 16px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.message-system {
+    align-self: center;
+    background: #e3f2fd;
+    color: #1565c0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.message-chat {
+    align-self: flex-start;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.message-chat .msg-author {
+    font-weight: 700;
+    color: #667eea;
+    font-size: 0.85em;
+    margin-bottom: 4px;
+}
+
+.message-chat .msg-text {
+    color: #333;
+    line-height: 1.4;
+}
+
+.message-chat .msg-time {
+    font-size: 0.75em;
+    color: #aaa;
+    margin-top: 6px;
+    text-align: right;
+}
+
+.message-guess {
+    align-self: flex-start;
+    background: #fff3e0;
+    border-left: 4px solid #ff9800;
+}
+
+.message-guess .msg-author {
+    font-weight: 700;
+    color: #e65100;
+    font-size: 0.85em;
+}
+
+.message-guess .msg-text {
+    color: #333;
+}
+
+.message-win {
+    align-self: center;
+    background: linear-gradient(135deg, #81c784 0%, #4caf50 100%);
+    color: white;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+    animation: pulse 1s ease infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+.message-win .msg-time {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.8em;
+    margin-top: 8px;
+}
+
+
+.input-area {
+    display: flex;
+    padding: 15px 20px;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    gap: 10px;
+}
+
+#message-input {
+    flex: 1;
+    padding: 14px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#message-input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+#send-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    padding: 0;
+}
+
+
+@media (max-width: 768px) {
+    .game-layout {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+    
+    .login-box {
+        padding: 30px 20px;
+    }
+}
