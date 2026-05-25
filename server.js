@@ -154,7 +154,7 @@ io.on('connection', (socket) => {
                     id: Date.now(),
                     type: 'guess',
                     author: user.name,
-                    text: `${user.name}: ${guess} — слишком мало! 📉`,
+                    text: `${user.name}: ${guess} — слишком мало! загаданное число больше`,
                     guess: guess,
                     result: 'low',
                     timestamp: timestamp
@@ -167,7 +167,7 @@ io.on('connection', (socket) => {
                     id: Date.now(),
                     type: 'guess',
                     author: user.name,
-                    text: `${user.name}: ${guess} — слишком много! 📈`,
+                    text: `${user.name}: ${guess} — слишком много! загаданное число меньше`,
                     guess: guess,
                     result: 'high',
                     timestamp: timestamp
