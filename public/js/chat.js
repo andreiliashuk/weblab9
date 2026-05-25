@@ -144,7 +144,7 @@ function displayMessage(msg) {
             
         case 'guess':
             content = `
-                <div class="msg-author">🎲 ${escapeHtml(msg.author)}</div>
+                <div class="msg-author"> ${escapeHtml(msg.author)}</div>
                 <div class="msg-text">${escapeHtml(msg.text)}</div>
                 <div class="msg-time">${msg.timestamp}</div>
             `;
@@ -152,7 +152,7 @@ function displayMessage(msg) {
             
         case 'win':
             content = `
-                <div class="msg-text">🏆 ${escapeHtml(msg.text)}</div>
+                <div class="msg-text"> ${escapeHtml(msg.text)}</div>
                 <div class="msg-time">${msg.timestamp}</div>
             `;
             break;
@@ -174,7 +174,6 @@ function updatePlayersList(players) {
         const div = document.createElement('div');
         div.className = 'player-item';
         
-        const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : '•';
         
         div.innerHTML = `
             <span class="player-name">${medal} ${escapeHtml(player.name)}</span>
